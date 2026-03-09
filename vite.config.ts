@@ -10,9 +10,9 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/remote-entry.ts'),
+      entry: resolve(__dirname, 'src/main.ts'),
       name: 'HttpCacheRemote',
-      fileName: () => 'remote-entry.js',
+      fileName: () => 'main.js',
       formats: ['es'],
     },
     rollupOptions: {
