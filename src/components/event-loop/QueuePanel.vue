@@ -3,18 +3,20 @@ import type { QueueItem } from './types'
 
 defineProps<{
   title: string
+  queueId: string
   items: QueueItem[]
   emptyText: string
 }>()
 </script>
 
 <template>
-  <section class="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900/50">
+  <section :data-queue-id="queueId" class="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900/50">
     <h3 class="text-sm font-semibold tracking-wide">{{ title }}</h3>
     <ul v-if="items.length" class="mt-3 space-y-2">
       <li
         v-for="item in items"
         :key="item.id"
+        data-queue-item
         class="rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-950"
       >
         {{ item.label }}

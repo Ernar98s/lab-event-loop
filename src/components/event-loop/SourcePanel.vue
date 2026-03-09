@@ -13,6 +13,7 @@ defineProps<{
       <div
         v-for="(line, index) in lines"
         :key="`${index}-${line}`"
+        :data-source-line-index="index"
         class="grid grid-cols-[2.5rem_1fr] gap-2 px-3 py-2"
         :class="
           activeIndex === index
