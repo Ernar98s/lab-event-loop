@@ -19,4 +19,7 @@ export default defineConfig({
       external: [],
     },
   },
+  define: {
+    "process.env.NODE_ENV": JSON.stringify("production")
+  }
 })
